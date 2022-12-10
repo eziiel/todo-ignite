@@ -1,0 +1,39 @@
+.FormNewTask{
+  width: 740px;
+  height: 54px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 8px;
+  margin: calc(0px - 54px/2) auto 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 2px;
+}
+
+.newTask{
+  background: var(--grey500);
+  flex: 1;
+  border-radius: 8px;
+  border: none;
+  padding: 1rem;
+  resize: none;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.buttonAddTask{
+  background: var(--blue400);
+  border-radius: 8px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1rem;
+  align-self: stretch;
+  cursor: pointer;
+  color: var(--white);
+  text-transform: capitalize;
+  letter-spacing: 0.05rem;
+}

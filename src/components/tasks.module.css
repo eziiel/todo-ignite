@@ -1,0 +1,25 @@
+.MainTasks {
+  width: 740px;
+  margin: 3rem auto;
+}
+
+.HeaderTasks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.InfoCountsTasks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--white);
+}
+
+.CountTasks{
+  background: var(--blue400);
+  border-radius: 8px;
+  padding: 0.350em;
+  font-weight: bold;
+  font-size: 0.875rem;
+}

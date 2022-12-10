@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --white:#fff;
+  --blue400:#2522B2;
+  --blue600:#0A0D29;
+  --blue800:#09031C;
+  --grey100:#808080;
+  --grey500:#262626;
+}
+
+:focus{
+  outline: transparent ;
+  box-shadow: 0 0 0 1px  var(--blue400);
+}
+
+body{
+  background: var(--blue600);
+  color: var(--white);
+  --webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: 'Comfortaa', cursive, sans-serif;
+}

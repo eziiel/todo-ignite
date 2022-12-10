@@ -1,10 +1,15 @@
-import { useState } from 'react'
+import "./global.css"
+import Header from "./components/header"
+import FormToDo from "./components/form"
+import Tasks from "./components/tasks"
 
 function App() {
   return (
-    <p>
-      hello World
-    </p>
+    <div>
+      <Header />
+      <FormToDo />
+      <Tasks />
+    </div>
   )
 }
 

@@ -1,0 +1,24 @@
+.header{
+  background: var(--blue800);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImg{
+  width: 25px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.spanLogo{
+  color: var(--white);
+  text-transform: lowercase;
+  line-height: 1;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.spanLogo + .spanLogo{
+  color: var(--blue400);
+}
