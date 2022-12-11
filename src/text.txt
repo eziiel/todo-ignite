@@ -1,0 +1,28 @@
+
+const tasks:Tasks[] | [] = [
+  {
+    id:0,
+    checked:false,
+    task:"estudar"
+  },
+  {
+    id:1,
+    checked:false,
+    task:"pitar"
+  },
+  {
+    id:2,
+    checked:false,
+    task:"trabalhar"
+  },
+  {
+    id:3,
+    checked:true,
+    task:"jogar"
+  },
+  {
+    id:4,
+    checked:true,
+    task:"ler"
+  },
+]

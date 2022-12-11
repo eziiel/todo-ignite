@@ -7,11 +7,11 @@
 :root {
   /* colors */
   --white:#fff;
-  --blue400:#2522B2;
+  --blue400:#5755d2;
   --blue600:#0A0D29;
   --blue800:#09031C;
   --grey100:#808080;
-  --grey500:#262626;
+  --grey500:#353434;
 }
 
 :focus{
@@ -26,4 +26,9 @@ body{
   font-weight: 400;
   font-size: 1rem;
   font-family: 'Comfortaa', cursive, sans-serif;
+}
+
+ul,li,a {
+  list-style: none;
+  text-decoration: none;
 }
