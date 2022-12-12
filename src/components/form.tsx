@@ -2,7 +2,7 @@ import style from "./formTask.module.css"
 import { PlusCircle } from "phosphor-react"
 import { ClipboardText } from "phosphor-react"
 
-import React, { ChangeEvent, FormEvent } from "react"
+import React, { ChangeEvent, FormEvent, InvalidEvent } from "react"
 import Task from "./task"
 import InfoTasks from "./infoTasks"
 
@@ -19,14 +19,16 @@ function VoidTasks () {
 interface Tasks {
   id: number,
   task: string,
-  checked: false
+  checked: boolean
 }
 
 export default function FormToDo () {
-  const [tasks, setTasks] = React.useState<Tasks  []>([])
+  const [tasks, setTasks] = React.useState<Tasks[]>([])
   const [task, setTask] = React.useState("")
+  const [checkeds, setCheckeds] = React.useState(0)
   
   const handleWriteTaskChange = (event: ChangeEvent<HTMLInputElement>) => {
+    event.target.setCustomValidity("")
     setTask(event.target.value)
   }
 
@@ -38,10 +40,34 @@ export default function FormToDo () {
       task: task,
       checked: false
     }
-    console.log(newTask.id)
     setTasks([...tasks, newTask])
   }
 
+  const deleteTask =(idTask:number) => {
+    const tasksActual = tasks.filter(item => item.id!=idTask)
+    setTasks(tasksActual)
+  }
+
+  const setChecked = (idTask:number) => {
+    const tasksActual = tasks.filter(item => {
+      if(item.id === idTask) {
+        item.checked = !item.checked
+        return item
+      } else {
+        return item
+      }
+    })
+    setTasks(tasksActual)
+    tasks.map(({ checked }) => {
+      checked ? setCheckeds(checkeds+1) : null
+    })
+  }
+
+  const isNewInputEmpty = task.length === 0
+
+  const handleInfoInput = (e:InvalidEvent<HTMLInputElement>) => {
+    e.target.setCustomValidity("preencha corretamente")
+  }
 
   return(
     <main className={style.main}>
@@ -49,13 +75,17 @@ export default function FormToDo () {
         onSubmit={handleCreatTask}
       >
         <input 
+          name="task"
+          placeholder="Adicione uma nova tarefa" 
+          type="text" 
+          className={style.newTask}
           value={task}
           onChange={handleWriteTaskChange}
-          className={style.newTask}
-          type="text" 
-          placeholder="Adicione uma nova tarefa" 
+          onInvalid={handleInfoInput}
+          required
         />
         <button type="submit"
+          disabled={isNewInputEmpty}
           className={style.buttonAddTask}
         >
           criar
@@ -63,7 +93,7 @@ export default function FormToDo () {
         </button>
       </form>
 
-      <InfoTasks />
+      <InfoTasks total={tasks.length} checkeds={checkeds}/>
 
       <section className = {style.MainTasks}>
         {
@@ -71,6 +101,8 @@ export default function FormToDo () {
           <ul className = {style.listTaskes}>
             {tasks.map(({ id, checked, task}) => (
               <Task 
+              setChecked = {setChecked}
+              deleteTask = {deleteTask}
               key={id}
               id ={id}
               checked = {checked}

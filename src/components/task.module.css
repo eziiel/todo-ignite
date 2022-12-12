@@ -17,18 +17,19 @@
   gap: 1rem;
   margin: 1rem;
   cursor: pointer;
-  flex: 1;
 }
 
-.itemTask > div > span {
-  justify-self: stretch;
+.spanTask {
+  display: blockaX;
+  letter-spacing: 1px;
+  word-break: break-all;
 }
 
 .trashTask{
   cursor: pointer;
   border: none;
   background: transparent;
-  margin      : 1rem;
+  padding: 1rem;
   align-items: center;
 }
 
@@ -39,6 +40,7 @@ input[type="radio"] {
   height: 20px;
   border: 2px solid var(--blue400);
   border-radius: 50%;
+  padding: 0.5rem;
 }
 
 input[type="radio"]:checked {
@@ -46,4 +48,15 @@ input[type="radio"]:checked {
   background-size: 15px;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+input[type="radio"]:checked + .spanTask {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+@media(max-width:500px) {
+  .spanTask {
+    max-width: 20ch;
+  }
 }

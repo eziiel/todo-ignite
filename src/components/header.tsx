@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./header.module.css"
 import LogoTodo from "../assets/logo.svg"
 
