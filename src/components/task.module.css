@@ -33,6 +33,10 @@
   align-items: center;
 }
 
+.trashTask:hover{
+  color: var(--red400)
+}
+
 input[type="radio"] {
   cursor: pointer;
   appearance: none;
