@@ -47,7 +47,7 @@ export default function Task ({ id, checked, task, deleteTask, setChecked}:Tasks
       <button 
         onClick={() => onDeleteTask(id)}
         className = {style.trashTask}> 
-        <Trash size={20} color="#fff"/>
+        <Trash className = {style.trash}size={20} />
       </button>
     </li>
   )

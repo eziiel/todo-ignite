@@ -8,6 +8,8 @@
   text-transform: capitalize;
   overflow: hidden;
   gap: 1rem;
+  padding: .5rem;
+
 }
 
 .itemTask > div {
@@ -33,8 +35,12 @@
   align-items: center;
 }
 
+.trashTask{
+  color: var(--white);
+}
+
 .trashTask:hover{
-  color: var(--red400)
+  color: red;
 }
 
 input[type="radio"] {
